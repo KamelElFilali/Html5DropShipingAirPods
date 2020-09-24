@@ -1,0 +1,824 @@
+/* Mobile: 480px de large
+Tablette: 768px de large
+Desktop: 1280px de large */
+
+/* *********************************** CSS PAGE ACCUEIL ***********************************  */
+
+/*  ************** DEBUT CSS CAROUSEL ************** */
+
+body {
+    font-size: 100%;
+    /* background-color: rgb(247, 247, 247, 0.1); */
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    padding: 0px;
+    margin: 0;
+}
+
+#divContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#slider {
+    /* on définit une largeur du slider afin de le centrer */
+    /* on définit la hauteur du slider */
+    margin: auto;
+    /* on centre le slider */
+    overflow: hidden;
+    /* on évite que le contenu qui déborde soit visible. Si on l'enlève, on voit toutes les images */
+}
+
+#slider #slider-container {
+    position: relative;
+    /* on applique une position relative sur le conteneur des images pour les animer ensuite avec la propriété left */
+    width: 500%;
+    height: auto;
+    /* on définit la largeur du conteneur des images */
+    animation: 15s slidy infinite;
+    /* on applique l'animation slidy pendant 15 secondes avec un loop infini */
+}
+
+#slider #slider-container img {
+    width: 20%;
+    /* on applique une largeur de 20% (100% / 5 images = 20%) et on place les images les unes à côté des autres */
+    float: left;
+}
+
+img[alt^="carousel"] {
+    max-width: 100%;
+    height: 1000px;
+    object-fit: cover;
+}
+
+/* on définit l'animation via plusieurs keyframes */
+
+@keyframes slidy {
+    0% {
+        left: 0%;
+    }
+    15% {
+        left: 0%;
+    }
+    20% {
+        left: -100%;
+    }
+    /* chaque image est déplacée de 100% vers la gauche du conteneur */
+    35% {
+        left: -100%;
+    }
+    40% {
+        left: -200%;
+    }
+    55% {
+        left: -200%;
+    }
+    60% {
+        left: -300%;
+    }
+    75% {
+        left: -300%;
+    }
+    80% {
+        left: -400%;
+    }
+    100% {
+        left: -400%;
+    }
+}
+
+/*  ************** FIN CSS CAROUSEL ************** */
+
+/*  ************** DEBUT CSS SECTION PUB ************** */
+
+#banierePub {
+    background: url(../images/produits/image_presentation/AirPods-Pro-couleurs2.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 500px;
+    width: 100%;
+    background-size: 100%;
+}
+
+#textBanierePub {
+    text-align: center;
+    margin: auto;
+    width: 70%;
+    padding-top: 1px;
+}
+
+#textBanierePub p {
+    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 2em;
+    color: white;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 6em;
+}
+
+#textBanierePub p>span {
+    color: white;
+}
+
+/*  ************** FIN CSS SECTION PUB ************** */
+
+#titrePresentationProduitAccueil {
+    text-align: center;
+    height: 300px;
+    margin-top: 50px;
+}
+
+#titrePresentationProduitAccueil>p:nth-child(1) {
+    font-size: 1.5em;
+}
+
+#titrePresentationProduitAccueil>p:nth-child(2) {
+    font-size: 2em;
+}
+
+#titrePresentationProduitAccueil hr {
+    margin: auto;
+    width: 70%;
+    border: 0.5px solid black;
+}
+
+/*  ************** DEBUT CSS SECTION PRODUIT ************** */
+
+#sectionProduitAccueil {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.articleProduitAccueil {}
+
+.figureProduitAccueil {
+    text-align: center;
+}
+
+.figureProduitAccueil p a {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    border-radius: 3px;
+    font-size: 2em;
+    transition: color 0.27s ease;
+}
+
+.figureProduitAccueil a:hover {
+    color: white;
+    background-color: black;
+}
+
+img[alt="imgProduitAccueil"] {
+    width: 430px;
+    height: 255px;
+}
+
+/*  ************** FIN CSS SECTION PRODUIT ************** */
+
+#traitDelimitationProduit hr {
+    width: 70%;
+    margin: auto;
+    margin-top: 100px;
+    border: 0.5px solid black;
+}
+
+#traitDelimitationProduit {
+    height: 150px;
+}
+
+/*  ************** DEBUT CSS SECTION PUB 2 ************** */
+
+#banierePub_2 {
+    background: url(../images/produits/image_presentation/airpods-romantisme.png);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 600px;
+    width: 100%;
+    background-size: 100%;
+}
+
+#textBanierePub_2 {
+    text-align: center;
+    margin: auto;
+    width: 70%;
+    padding-top: 1px;
+}
+
+#textBanierePub_2 p {
+    /* background-color: rgba(0, 0, 0, 0.6); */
+    font-size: 3em;
+    color: white;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 5em;
+}
+
+#textBanierePub_2 p>span {
+    color: white;
+}
+
+/*  ************** FIN CSS SECTION PUB 2 ************** */
+
+/*  ************** DEBUT CSS SECTION NEWSLETTER ************** */
+
+#newsLetter {
+    background: url(../images/produits/image_presentation/airpods.png);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 500px;
+    width: 100%;
+    background-size: 100%;
+}
+
+#textNewsLetter {
+    text-align: center;
+    margin: auto;
+    width: 70%;
+    padding-top: 1px;
+}
+
+#textNewsLetter p {
+    /* background-color: rgba(0, 0, 0, 0.6); */
+    font-size: 1.5em;
+    color: black;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 7em;
+}
+
+#textNewsLetter span {
+    color: black;
+    font-size: 1em;
+}
+
+#textNewsLetter input {
+    font-size: 1em;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: none;
+    outline: none;
+    width: 40%;
+}
+
+#textNewsLetter input::placeholder {
+    color: black;
+    font-size: 1em;
+    text-align: center;
+}
+
+#textNewsLetter input:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: color 0.9s ease;
+    border: 3px solid rgb(255, 99, 71);
+}
+
+/*  ************** FIN CSS SECTION NEWSLETTER ************** */
+
+/* *********************************** FIN CSS PAGE ACCUEIL ***********************************  */
+
+/* *********************************** DEBUT CSS PAGE CATALOGUE ***********************************  */
+
+#titrePresentationPageProduits {
+    text-align: center;
+    background: url(../images/produits/image_presentation/gif_airpodsCouleur4.gif);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 600px;
+    width: 100%;
+    background-size: 100%;
+}
+
+#titrePresentationPageProduits>div>p:nth-child(1) {
+    font-size: 1.5em;
+    color: black;
+}
+
+#titrePresentationPageProduits>div>p:nth-child(2) {
+    font-size: 2em;
+    color: black;
+}
+
+#titrePresentationPageProduits hr {
+    margin: auto;
+    width: 70%;
+    border: 1px solid black;
+}
+
+#titrePresentationPageProduits>div {
+    width: 70%;
+    margin: auto;
+    margin-top: 9em;
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    padding: 3em;
+    padding-left: 0em;
+    padding-right: 0em;
+    padding-top: 2em;
+    font-weight: bolder;
+}
+
+#boutonChangementImagePageProduit {
+    text-align: center;
+    margin-top: 7em;
+}
+
+#boutonChangementImagePageProduit a {
+    border: 0.2em solid black;
+    background-color: black;
+    color: white;
+    margin: 1em;
+    font-size: 2em;
+    text-decoration: none;
+    padding: 0.5em;
+}
+
+/*  ************** DEBUT CSS SECTION PRODUIT CATALOGUE ************** */
+
+#sectionProduitCatalogue {
+    display: flex;
+    /* flex-direction: row; */
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+/*
+.articleProduitCatalogue {}
+*/
+
+.figureProduitCatalogue {
+    text-align: center;
+}
+
+.figureProduitCatalogue p a {
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    border-radius: 3px;
+    font-size: 2em;
+    transition: color 0.27s ease;
+}
+
+.figureProduitCatalogue a:hover {
+    color: white;
+    background-color: black;
+}
+
+img[alt="imgProduitCatalogue"] {
+    width: 430px;
+    height: 255px;
+}
+
+/*  ************** FIN CSS SECTION PRODUIT CATALOGUE ************** */
+
+/*  ************** DEBUT CSS SECTION PUB CATALOGUE ************** */
+
+#banierePubBasDePageCatalogue {
+    text-align: center;
+    background: url(../images/produits/image_presentation/gifConnexionAirpods.gif);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 700px;
+    margin: auto;
+    width: 80%;
+    background-size: 25%;
+}
+
+#banierePubBasDePageCatalogue>div>p:nth-child(1) {
+    font-size: 1.5em;
+    color: black;
+}
+
+#banierePubBasDePageCatalogue>div>p:nth-child(2) {
+    font-size: 1.5em;
+    color: black;
+}
+
+#banierePubBasDePageCatalogue>div {
+    width: 70%;
+    margin: auto;
+    margin-top: 16em;
+    /* background-color: rgba(0, 0, 0, 0.65); */
+    padding: 3em;
+    padding-left: 0em;
+    padding-right: 0em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+/*  ************** FIN CSS SECTION PUB CATALOGUE ************** */
+
+/* *********************************** FIN CSS PAGE CATALOGUE ***********************************  */
+
+/* *********************************** DEBUT CSS PAGE FORMULAIRE ***********************************  */
+
+.formulaire-main {
+    padding-top: 90px !important;
+}
+
+#Contact-divContainer {
+    width: 100% !important;
+    color: white;
+    position: relative;
+}
+
+.section-1 {
+    width: 60%;
+}
+
+#Contact-divContainer section {
+    margin-top: 60px;
+    padding: 0 !important;
+    margin: auto !important;
+}
+
+#Contact-divContainer h1 {
+    color: rgba(0, 0, 0, 0.95);
+    text-align: center;
+    font-size: 38px;
+    font-weight: normal;
+}
+
+.msg-1 {
+    margin-top: 70px;
+    border-bottom: 2px rgba(0, 0, 0, 0.95) solid;
+    width: 55%;
+}
+
+#Contact-divContainer h3 {
+    color: rgba(0, 0, 0, 0.95);
+    font-size: 24px;
+    font-weight: normal;
+}
+
+.form-container {
+    background-color: rgba(0, 0, 0, 0.95);
+    width: 100%;
+    height: 730px;
+    margin: 0 !important;
+    position: relative;
+}
+
+iframe {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.form-container p {
+    font-size: 20px;
+    padding-top: 20px !important;
+}
+
+.txt-p-container {
+    border-bottom: 2px white solid;
+    padding: 0px !important;
+    width: 80%;
+    margin-left: 30px;
+}
+
+.form-container div {
+    margin-top: 30px;
+}
+
+.form-container-child div {
+    padding: 10px;
+}
+
+.form-container-child input, textarea {
+    float: right;
+    width: 60%;
+    height: 30px;
+    position: relative;
+    right: 40px;
+}
+
+.form-container-child textarea {
+    height: 190px;
+    resize: none;
+    margin-bottom: 30px;
+}
+
+.form-container-child label {
+    position: relative;
+    top: 10px;
+    left: 50px;
+}
+
+.form-container input[type="submit"] {
+    position: absolute;
+    width: 30%;
+    bottom: 20px;
+    right: 230px;
+    height: 50px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+}
+
+.form-container input[type="submit"]:hover {
+    cursor: pointer;
+    border: 2px red solid;
+}
+
+/* *********************************** FIN CSS PAGE FORMULAIRE ***********************************  */
+
+/* *********************************** DEBUT CSS PAGE DETAILS PRODUITS ***********************************  */
+
+#banierePhotoDescriptionProduit {
+    text-align: center;
+    background: url(../images/produits/airpods/gifAirpodsproBlanc3.gif);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    margin: auto;
+    width: 100%;
+    background-size: 100%;
+    margin-top: 0px;
+    background-color: black;
+}
+
+#baniereTextDescription {
+    text-align: center;
+    /* background: url(../images/produits/airpods/gifAirpodsproBlanc3.gif);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat; */
+    min-height: 300px;
+    margin: auto;
+    width: 100%;
+    background-size: 100%;
+    margin-top: 0px;
+    /* background-color: rgba(245, 245, 245, 0.979); */
+    background-color: black;
+}
+
+#baniereTextDescription>div>p:nth-child(1) {
+    font-size: 2em;
+    color: white;
+}
+
+#baniereTextDescription>div>p:nth-child(2) {
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+}
+
+#baniereTextDescription>div {
+    width: 70%;
+    margin: auto;
+    margin-top: 41m;
+    /* background-color: rgba(0, 0, 0, 0.65); */
+    padding: 3em;
+    padding-left: 0em;
+    padding-right: 0em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-weight: bolder;
+    border-radius: 25px;
+}
+
+#banierePhotoDescriptionProduit2 {
+    text-align: center;
+    background: url(../images/produits/airpods/gifAirpodsproBlanc3.gif);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    margin: auto;
+    width: 100%;
+    background-size: 100%;
+    margin-top: 0px;
+    background-color: rgba(0, 0, 0, 0.609);
+}
+
+#baniereTextDescription1 {
+    text-align: center;
+    /* background: url(../images/produits/airpods/gifAirpodsproBlanc3.gif);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat; */
+    min-height: 300px;
+    margin: auto;
+    width: 100%;
+    background-size: 100%;
+    margin-top: 0px;
+    /* background-color: rgba(245, 245, 245, 0.979); */
+    background-color: black;
+}
+
+#baniereTextDescription1>div>p:nth-child(1) {
+    font-size: 2em;
+    color: white;
+}
+
+#baniereTextDescription1>div>p:nth-child(2) {
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+}
+
+#baniereTextDescription1>div {
+    width: 70%;
+    margin: auto;
+    margin-top: 41m;
+    /* background-color: rgba(0, 0, 0, 0.65); */
+    padding: 3em;
+    padding-left: 0em;
+    padding-right: 0em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-weight: bolder;
+    border-radius: 25px;
+}
+
+#banierePhotoDescriptionProduit3 {
+    /* text-align: center;
+     background: url(../images/produits/airpods/gifAirpodsproBlanc2.gif); 
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    margin: auto;
+    width: 100%;
+    background-size: 100%;
+    margin-top: 0px; */
+    width: 100%;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.609);
+}
+
+#banierePhotoDescriptionProduit3 video {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+#banierePhotoDescriptionProduit4 {
+    /* text-align: center;
+    background: url(../images/produits/airpods/gifAirpodsproBlanc2.gif);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    margin: auto;
+    width: 100%;
+    background-size: 100%;
+    margin-top: 0px;
+    background-color: black; */
+    width: 100%;
+    height: 400px;
+}
+
+#banierePhotoDescriptionProduit4 video {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+#baniereTextDescription2 {
+    text-align: center;
+    /* background: url(../images/produits/airpods/gifAirpodsproBlanc3.gif);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat; */
+    min-height: 300px;
+    margin: auto;
+    width: 100%;
+    background-size: 100%;
+    margin-top: 0px;
+    /* background-color: rgba(245, 245, 245, 0.979); */
+    background-color: black;
+}
+
+#baniereTextDescription2>div>p:nth-child(1) {
+    font-size: 2em;
+    color: white;
+}
+
+#baniereTextDescription2>div>p:nth-child(2) {
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+}
+
+#baniereTextDescription2>div {
+    width: 70%;
+    margin: auto;
+    margin-top: 41m;
+    /* background-color: rgba(0, 0, 0, 0.65); */
+    padding: 3em;
+    padding-left: 0em;
+    padding-right: 0em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-weight: bolder;
+    border-radius: 25px;
+}
+
+#baniereTextDescription3 {
+    text-align: center;
+    /* background: url(../images/produits/airpods/gifAirpodsproBlanc3.gif);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat; */
+    min-height: 300px;
+    margin: auto;
+    width: 100%;
+    background-size: 100%;
+    margin-top: 0px;
+    /* background-color: rgba(245, 245, 245, 0.979); */
+    background-color: black;
+}
+
+#baniereTextDescription3>div>p:nth-child(1) {
+    font-size: 2em;
+    color: white;
+}
+
+#baniereTextDescription3>div>p:nth-child(2) {
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+}
+
+#baniereTextDescription3>div {
+    width: 70%;
+    margin: auto;
+    margin-top: 41m;
+    /* background-color: rgba(0, 0, 0, 0.65); */
+    padding: 3em;
+    padding-left: 0em;
+    padding-right: 0em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    font-weight: bolder;
+    border-radius: 25px;
+}
+
+#sectionAjouterProduitAuPanier {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+#sectionAjouterProduitAuPanier>div:nth-child(2) {
+    text-align: center;
+}
+
+#sectionAjouterProduitAuPanier>div:nth-child(2)>p:nth-child(1) {
+    font-size: 1.3em;
+}
+
+#sectionAjouterProduitAuPanier>div:nth-child(1)>p:nth-child(1)>span:nth-child(3) {
+    font-size: 1.2em;
+}
+
+#inputAjouterAuPanier {
+    text-align: center;
+}
+
+/*
+#inputAjouterAuPanier form {}
+*/
+
+#inputAjouterAuPanier>form:nth-child(1)>input:nth-child(1) {
+    width: 3em;
+    height: 2.8em;
+    margin-bottom: 30px;
+}
+
+#inputAjouterAuPanier>form:nth-child(1)>input:nth-child(2) {
+    height: 3em;
+    background-color: white;
+    color: black;
+    border: 1px solid white;
+}
+
+#inputAjouterAuPanier>form:nth-child(1)>input:nth-child(2):hover {
+    border: 1px solid tomato;
+    width: 11em;
+    height: 2.8em;
+    background-color: tomato;
+    color: black;
+}
+
+img[alt="airPodsProDescriptionProduit"] {
+    width: 620x;
+    height: 500px;
+}
+
+#divImgDescriptionProduit {
+    text-align: center;
+}
+
+/* CSS contact */
+
+/* *********************************** FIN CSS PAGE DETAILS PRODUITS ***********************************  */

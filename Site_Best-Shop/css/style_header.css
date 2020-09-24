@@ -1,0 +1,337 @@
+/* Mobile: 480px de large
+Tablette: 768px de large
+Desktop: 1280px de large */
+
+/* *********************************** CSS HEADER ***********************************  */
+
+body {
+    padding: 0px;
+    margin: 0;
+}
+
+/* .header-fixed {
+    background-color: #292c2f;
+    box-shadow: 0 1px 1px #ccc;
+    padding: 20px 40px;
+    height: 80px;
+    color: #ffffff;
+    box-sizing: border-box;
+    top: -100px;
+    -webkit-transition: top 0.3s;
+    transition: top 0.3s;
+} */
+
+.header-fixed-placeholder {
+    height: 80px;
+    display: none;
+}
+
+body.fixed .header-fixed-placeholder {
+    display: block;
+}
+
+html[dir="rtl"] header {
+    flex-direction: row;
+}
+
+#headerContainer {
+    /* display: flex; */
+}
+
+header {
+    display: flex;
+    /* z-index: 2; */
+    width: 100%;
+    height: 100px;
+    /* background-color: rgba(0, 0, 0, 0.95); */
+    background-color: black;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: fixed;
+    /* padding-top: 50px; */
+    transition: 0.7s all;
+    z-index: 100;
+    top: 0;
+}
+
+body.header-fixed header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding-top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+@media screen and (min-width: 768px) {
+    /* Responsive tablette */
+    header {
+        height: 100px;
+        flex-wrap: nowrap;
+    }
+}
+
+/* ************* CSS DU BURGER MENU *********** */
+
+#BurgerMenuToggle {
+    width: 72px;
+    flex-shrink: 0;
+    -webkit-user-select: none;
+    user-select: none;
+    text-align: center;
+}
+
+#BurgerMenuToggle a {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+#BurgerMenuToggle a:hover {
+    color: tomato;
+}
+
+#BurgerMenuToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor: pointer;
+    opacity: 0;
+    /* hide this */
+    z-index: 2;
+    /* and place it over the hamburger */
+    -webkit-touch-callout: none;
+}
+
+/*
+  * Just a quick hamburger
+  */
+
+#BurgerMenuToggle span {
+    top: 20px;
+    left: 20px;
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: white;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+}
+
+#BurgerMenuToggle span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#BurgerMenuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+/* 
+  * Transform all the slices of hamburger
+  * into a crossmark.
+  */
+
+#BurgerMenuToggle input:checked~span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: white;
+}
+
+/*
+  * But let's hide the middle one.
+  */
+
+#BurgerMenuToggle input:checked~span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+  * Ohyeah and the last one should go the other direction
+  */
+
+#BurgerMenuToggle input:checked~span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+  * Make this absolute positioned
+  * at the top left of the screen
+  */
+
+#menu {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 400px;
+    background-color: rgba(0, 0, 0, 0.7);
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+#menu li {
+    padding: 40px 0;
+    font-size: 30px;
+    text-align: center;
+}
+
+/*
+  * And let's slide it in from the left
+  */
+
+#BurgerMenuToggle input:checked~ul {
+    transform: none;
+}
+
+/* ************* FIN DU CSS BURGER MENU *********** */
+
+/* ************* CSS LOGO *********** */
+
+.logo {
+    height: 100px;
+    flex-shrink: 0;
+    order: 0;
+}
+
+@media screen and (min-width: 768px) {
+    /* Responsive tablette */
+    .logo {
+        height: 100px;
+        flex-shrink: 1;
+        order: 0;
+    }
+}
+
+/* Titre bestShop Logo */
+
+img[alt="imgLogo"] {
+    width: 180px;
+    height: 100px;
+}
+
+#titrePrincipalLogo {
+    width: 200px;
+    height: 12px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 20px;
+    /* or 83% */
+    text-align: center;
+    font-weight: bold;
+    color: #FFFFFF;
+    backdrop-filter: blur(4px);
+    /* Note: backdrop-filter has minimal browser support */
+}
+
+/* ligne gauche logo */
+
+#ligneGaucheLogo {
+    /* width: 38px;
+    height: 0px;
+    left: 381px;
+    top: 74px;*/
+    border: 1px solid white;
+    width: 25px;
+    color: white;
+    border-radius: 3px;
+    transform: rotate(0deg);
+}
+
+/* Titre Montreal logo */
+
+#titreMontrealLogo {
+    /* position: absolute; */
+    left: 416px;
+    top: 62px;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 20px;
+    /* or 250% */
+    text-align: center;
+    color: #FFFFFF;
+    transform: rotate(90deg);
+    font-weight: normal;
+}
+
+/* ligne droite logo */
+
+#ligneDroitLogo {
+    /* position: absolute; */
+    width: 38px;
+    height: 0px;
+    left: 458px;
+    top: 74px;
+    border: 1px solid red;
+}
+
+/* ************* FIN DU CSS LOGO *********** */
+
+/* ************* CSS ICON PANIER... *********** */
+
+@media screen and (min-width: 50px) {
+    /* Responsive tablette */
+    .iconBtn {
+        background-color: rgba(0, 0, 0, 0.8);
+        flex-shrink: 0;
+    }
+}
+
+@media screen and (min-width: 324px) {
+    /* Responsive tablette */
+    .iconBtn {
+        background-color: rgba(0, 0, 0, 0);
+        flex-shrink: 0;
+    }
+}
+
+@media screen and (min-width: 480px) {
+    /* Responsive tablette */
+    .iconBtn {
+        background-color: rgba(0, 0, 0, 0);
+        flex-shrink: 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    /* Responsive tablette */
+    .iconBtn {
+        background-color: rgba(0, 0, 0, 0);
+        flex-shrink: 0;
+    }
+}
+
+.iconBtn {
+    width: 72px;
+    flex-shrink: 0;
+}
+
+.iconBtn img {}
+
+img[alt="imgPanier"] {
+    width: 42px;
+    padding: 15px;
+}
+
+/* ************* FIN DU CSS ICOM PANIER... *********** */
+
+/* ******************** DEBUT RESPONSIVE HEADER   ********************  */
+
+/* ******************** FIN RESPONSIVE HEADER   ********************  */
+
+/* *********************************** FIN CSS HEADER  ***********************************  */
